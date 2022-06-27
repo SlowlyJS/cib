@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: "qwerty"
+  rabbitmq:
+    ports:
+      - 5672:5672
+      - 15672:15672
+    host: 'localhost'
+    username: guest
+    password: guest
