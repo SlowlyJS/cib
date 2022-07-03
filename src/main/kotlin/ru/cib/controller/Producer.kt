@@ -1,6 +1,6 @@
 package ru.cib.controller
 
-import org.springframework.amqp.rabbit.core.RabbitTemplate
+/*import org.springframework.amqp.rabbit.core.RabbitTemplate
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 import ru.cib.entity.PersonEntity
@@ -18,4 +18,4 @@ class Producer (private val rabbitTemplate: RabbitTemplate,
         }
 
     }
-}
+}*/

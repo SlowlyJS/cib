@@ -3,15 +3,30 @@ package ru.cib.controller
 import org.springframework.web.bind.annotation.*
 import ru.cib.dto.PersonDto
 import ru.cib.service.PersonService
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 @RestController
-@RequestMapping("/persons")
+@RequestMapping("/main")
+class PersonsController(
+    private val personService: PersonService,
+){
 
-class PersonsController (
-    private val personService: PersonService){
+    private val LOGGER: Logger = LoggerFactory.getLogger(PersonsController::class.java)
 
-    @GetMapping
+    @ResponseBody
+    @RequestMapping(path = ["/"])
+    fun home(): String? {
+        LOGGER.trace("This is TRACE")
+        LOGGER.debug("This is DEBUG")
+        LOGGER.info("This is INFO")
+        LOGGER.warn("This is WARN")
+        LOGGER.error("This is ERROR")
+        return "Hi, show loggings in the console or file!"
+    }
 
+    @GetMapping()
     fun getAll(): List<PersonDto> = personService.getAll()
 
     @GetMapping("/{id}")
